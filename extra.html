@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Exemplo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .jumbotron {
+            background-image: url('restaurant.jpg');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 20px;
+        }
+        .jumbotron h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .menu-item {
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Restaurante Exemplo</h1>
+    </header>
+    <nav>
+        <a href="#">Menu</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Bem-vindo ao nosso Restaurante</h1>
+            <p>Experimente nossos pratos deliciosos!</p>
+        </div>
+        <h2>Menu</h2>
+        <div class="menu">
+            <div class="menu-item">
+                <h3>Prato 1</h3>
+                <p>Descrição do prato 1</p>
+            </div>
+            <div class="menu-item">
+                <h3>Prato 2</h3>
+                <p>Descrição do prato 2</p>
+            </div>
+            <div class="menu-item">
+                <h3>Prato 3</h3>
+                <p>Descrição do prato 3</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Restaurante Exemplo. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
