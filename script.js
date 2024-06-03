@@ -63,20 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCartItems() {
-        cartItemsContainer.innerHTML = ''; 
+        cartItemsContainer.innerHTML = ''; // Clear the current items
         let totalPrice = 0;
 
-        cart.forEach(cartItem => {
+        cart.forEach((cartItem, index) => {
             const itemElement = document.createElement('div');
             itemElement.innerHTML = `
                 <span>${cartItem.item} - Quantidade: ${cartItem.quantity}</span>
                 <span>R$${(cartItem.price * cartItem.quantity).toFixed(2)}</span>
+                <button class="remove-item" data-index="${index}">&times;</button>
             `;
             cartItemsContainer.appendChild(itemElement);
             totalPrice += cartItem.price * cartItem.quantity;
         });
 
         cartTotalContainer.innerText = `Total: R$${totalPrice.toFixed(2)}`;
+
+        // Add event listeners to remove buttons
+        const removeButtons = document.querySelectorAll('.remove-item');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const index = parseInt(button.dataset.index);
+                cart.splice(index, 1);
+                updateCartItems();
+                updateCartCount();
+            });
+        });
     }
 
     cartIcon.addEventListener('click', () => {
